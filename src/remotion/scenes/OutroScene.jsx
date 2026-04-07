@@ -231,7 +231,7 @@ export const OutroScene = () => {
                     <div
                         style={{
                             position: "absolute",
-                            right: 0,
+                            right: 20,
                             top: 30,
                             width: 34,
                             height: 36,
