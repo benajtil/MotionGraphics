@@ -1,8 +1,10 @@
 import React from "react";
 import { AbsoluteFill, Img, interpolate, useCurrentFrame } from "remotion";
 import { COLORS } from "../styles/theme";
-import { FEATURED_LABELS } from "../data/coffeeData";
+import { FEATURED_LABELS } from "../data/coffeeData.js";
 import { getMapRect, projectSvgPoint } from "../utils/mapProjection";
+import { staticFile } from "remotion";
+
 
 const getMarkerSize = (size = "md") => {
     if (size === "xl") {
@@ -66,7 +68,7 @@ export const WorldMap = ({
                     }}
                 >
                     <Img
-                        src="/world-map.svg"
+                        src={staticFile("world-map.svg")}
                         style={{
                             width: "100%",
                             height: "100%",

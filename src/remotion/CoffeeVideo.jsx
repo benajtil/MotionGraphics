@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Audio } from "remotion";
+import { Easing, Audio, staticFile } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
@@ -11,9 +11,7 @@ import { BigStatScene } from "./scenes/BigStatScene";
 import { ComparisonScene } from "./scenes/ComparisonScene";
 import { OutroScene } from "./scenes/OutroScene";
 
-export const CoffeeVideo = ({
-    timings,
-}) => {
+export const CoffeeVideo = ({ timings }) => {
     const {
         introFrames,
         originsFrames,
@@ -27,7 +25,7 @@ export const CoffeeVideo = ({
         <TransitionSeries>
             <TransitionSeries.Sequence durationInFrames={introFrames} name="Intro">
                 <>
-                    <Audio src="/Sound/intro.mp3" />
+                    <Audio src={staticFile("Sound/intro.mp3")} />
                     <IntroScene />
                 </>
             </TransitionSeries.Sequence>
@@ -39,7 +37,7 @@ export const CoffeeVideo = ({
 
             <TransitionSeries.Sequence durationInFrames={originsFrames} name="Origins">
                 <>
-                    <Audio src="/Sound/scene2.mp3" />
+                    <Audio src={staticFile("Sound/scene2.mp3")} />
                     <OriginsScene />
                 </>
             </TransitionSeries.Sequence>
@@ -54,7 +52,7 @@ export const CoffeeVideo = ({
 
             <TransitionSeries.Sequence durationInFrames={routesFrames} name="Routes">
                 <>
-                    <Audio src="/Sound/fixed-scene.mp3" />
+                    <Audio src={staticFile("Sound/fixed-scene.mp3")} />
                     <RoutesScene />
                 </>
             </TransitionSeries.Sequence>
@@ -69,7 +67,7 @@ export const CoffeeVideo = ({
 
             <TransitionSeries.Sequence durationInFrames={statFrames} name="BigStat">
                 <>
-                    <Audio src="/Sound/scene5.mp3" />
+                    <Audio src={staticFile("Sound/scene5.mp3")} />
                     <BigStatScene />
                 </>
             </TransitionSeries.Sequence>
@@ -82,9 +80,12 @@ export const CoffeeVideo = ({
                 })}
             />
 
-            <TransitionSeries.Sequence durationInFrames={comparisonFrames} name="Comparison">
+            <TransitionSeries.Sequence
+                durationInFrames={comparisonFrames}
+                name="Comparison"
+            >
                 <>
-                    <Audio src="/Sound/scene3.mp3" />
+                    <Audio src={staticFile("Sound/scene4.mp3")} />
                     <ComparisonScene />
                 </>
             </TransitionSeries.Sequence>
@@ -96,7 +97,7 @@ export const CoffeeVideo = ({
 
             <TransitionSeries.Sequence durationInFrames={outroFrames} name="Outro">
                 <>
-                    <Audio src="/Sound/scene6.mp3" />
+                    <Audio src={staticFile("Sound/scene6.mp3")} />
                     <OutroScene />
                 </>
             </TransitionSeries.Sequence>

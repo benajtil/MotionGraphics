@@ -4,10 +4,11 @@ import { SceneContainer } from "../components/SceneContainer";
 import { WorldMap } from "../components/WorldMap";
 import { TitleBlock } from "../components/TitleBlock";
 import { RouteArc } from "../components/RouteArc";
-import { ALL_POINTS, CONSUMERS, ROUTES } from "../data/coffeeData";
+import { ALL_POINTS, CONSUMERS, ROUTES } from "../data/coffeeData.js";
 import { getMapRect, projectSvgPoint } from "../utils/mapProjection";
 import { fadeUp } from "../utils/animation";
 import { COLORS } from "../styles/theme";
+
 
 const pointsByKey = ALL_POINTS.reduce((acc, item) => {
     acc[item.key] = item;

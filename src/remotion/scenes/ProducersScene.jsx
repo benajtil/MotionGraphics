@@ -2,7 +2,7 @@ import React from "react";
 import { BackgroundGlow } from "../components/BackgroundGlow";
 import { WorldMap } from "../components/WorldMap";
 import { MapMarker } from "../components/MapMarker";
-import { producerCountries } from "../data/coffeeData";
+import { producerCountries } from "../data/coffeeData.js";
 
 export const ProducersScene = () => {
     return (

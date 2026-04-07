@@ -7,7 +7,7 @@ export default function App() {
     <div className="app-shell">
       <div className="content">
         <div className="text-block">
-          <p className="eyebrow">AI-Powered Motion Graphics</p>
+          <p className="eyebrow">Motion Graphics</p>
           <h1>Bean to Brew</h1>
           <p className="subtitle">
             A short documentary-style coffee journey animation built with React,
@@ -24,11 +24,11 @@ export default function App() {
                 originsFrames: 170,
                 routesFrames: 190,
                 statFrames: 145,
-                comparisonFrames: 160,
-                outroFrames: 170,
+                comparisonFrames: 200,
+                outroFrames: 260,
               },
             }}
-            durationInFrames={900}
+            durationInFrames={960}
             compositionWidth={1920}
             compositionHeight={1080}
             fps={30}

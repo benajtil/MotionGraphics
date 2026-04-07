@@ -24,7 +24,7 @@ export const ComparisonScene = () => {
                     eyebrow="Comparison"
                     title={"Production and\nconsumption\nrarely live\nin the same place"}
                     subtitle="That gap is what makes coffee such a strong visual story for maps, charts, and motion."
-                    titleSize={76}
+                    titleSize={65}
                     maxWidth={700}
                 />
             </div>
@@ -33,14 +33,14 @@ export const ComparisonScene = () => {
                 title="Production"
                 items={PRODUCERS}
                 delay={16}
-                style={{ position: "absolute", right: 760, top: 210 }}
+                style={{ position: "absolute", right: 660, top: 10, maxWidth: 500 }}
             />
 
             <BarChart
                 title="Consumption"
                 items={CONSUMERS}
                 delay={28}
-                style={{ position: "absolute", right: 100, top: 210 }}
+                style={{ position: "absolute", right: 30, top: 210 }}
             />
         </SceneContainer>
     );

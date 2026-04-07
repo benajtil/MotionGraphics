@@ -3,7 +3,7 @@ import { useCurrentFrame, useVideoConfig } from "remotion";
 import { SceneContainer } from "../components/SceneContainer";
 import { WorldMap } from "../components/WorldMap";
 import { TitleBlock } from "../components/TitleBlock";
-import { PRODUCERS } from "../data/coffeeData";
+import { PRODUCERS } from "../data/coffeeData.js";
 import { fadeUp } from "../utils/animation";
 import { COLORS } from "../styles/theme";
 

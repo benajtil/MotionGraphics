@@ -1,7 +1,7 @@
 import React from "react";
-import { Composition } from "remotion";
+import { Composition, staticFile } from "remotion";
 import { getAudioDurationInSeconds } from "@remotion/media-utils";
-import { CoffeeVideo } from "./CoffeeVideo";
+import { CoffeeVideo } from "./remotion/CoffeeVideo";
 
 const FPS = 30;
 const WIDTH = 1920;
@@ -17,8 +17,6 @@ const TRANSITIONS = {
 
 const toFrames = (seconds) => Math.ceil(seconds * FPS);
 
-// Small padding so the scene breathes a bit after each line.
-// You can tune these later.
 const EXTRA = {
     intro: 18,
     origins: 18,
@@ -51,22 +49,22 @@ export const RemotionRoot = () => {
                 const [
                     introSec,
                     scene2Sec,
-                    scene3Sec,
+                    routesSec,
                     scene4Sec,
                     scene5Sec,
                     scene6Sec,
                 ] = await Promise.all([
-                    getAudioDurationInSeconds("/Sound/intro.mp3"),
-                    getAudioDurationInSeconds("/Sound/scene2.mp3"),
-                    getAudioDurationInSeconds("/Sound/scene3.mp3"),
-                    getAudioDurationInSeconds("/Sound/scene4.mp3"),
-                    getAudioDurationInSeconds("/Sound/scene5.mp3"),
-                    getAudioDurationInSeconds("/Sound/scene6.mp3"),
+                    getAudioDurationInSeconds(staticFile("Sound/intro.mp3")),
+                    getAudioDurationInSeconds(staticFile("Sound/scene2.mp3")),
+                    getAudioDurationInSeconds(staticFile("Sound/fixed-scene.mp3")),
+                    getAudioDurationInSeconds(staticFile("Sound/scene4.mp3")),
+                    getAudioDurationInSeconds(staticFile("Sound/scene5.mp3")),
+                    getAudioDurationInSeconds(staticFile("Sound/scene6.mp3")),
                 ]);
 
                 const introFrames = toFrames(introSec) + EXTRA.intro;
                 const originsFrames = toFrames(scene2Sec) + EXTRA.origins;
-                const routesFrames = toFrames(scene3Sec) + EXTRA.routes;
+                const routesFrames = toFrames(routesSec) + EXTRA.routes;
                 const statFrames = toFrames(scene4Sec) + EXTRA.stat;
                 const comparisonFrames = toFrames(scene5Sec) + EXTRA.comparison;
                 const outroFrames = toFrames(scene6Sec) + EXTRA.outro;

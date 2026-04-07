@@ -1,4 +1,4 @@
-import { MAP_NATIVE_SIZE } from "../data/coffeeData";
+import { MAP_NATIVE_SIZE } from "../data/coffeeData.js";
 
 export const getMapRect = ({
     frameWidth = 1920,
